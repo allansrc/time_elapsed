@@ -1,7 +1,7 @@
 library time_elapsed;
 
 class TimeElapsed {
-  String passedTimeStr(strTime) {
+  String fromDateStr(strTime) {
     /// if time is greater than a week {first checks > writtn on memo}
     final int diffDays =
         DateTime.parse(strTime).difference(DateTime.now().toUtc()).inDays;
@@ -32,7 +32,7 @@ class TimeElapsed {
     }
   }
 
-  String passedTime(DateTime time) {
+  String fromDateTime(DateTime time) {
     /// if time is greater than a week {first checks > writtn on memo}
     final int diffDays = time.difference(DateTime.now().toUtc()).inDays;
 

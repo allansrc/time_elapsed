@@ -1,14 +1,42 @@
-# time_elapsed
+Intl
+====
 
-A new Flutter package project.
+This package provides a way to facility how you getting elapsed time from a DateTime data. More applied to check how long from now an event happened.
 
-## Getting Started
+## Default:
+It return elapsed time by **Weeks**, **Days**, **Hours** and **Minutes**
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## How to use:
+
+The package has a two method to get date time elapsed: ```fromDateStr()``` and ```fromDateTime()```
+
+You can pass it as String or DateTime type:
+
+
+      String timeString = "2020-04-19 03:48:57.063773"; // set a String type var with Date sample
+      DateTime timeDate = DateTime.parse("2020-04-19 03:48:57.063773"); // set a DateTime var sample
+
+      // to calculate from String
+      String timeStamp = TimeElapsed().fromDateStr(timeString); // returns 8w (cos now days:2020-06-19)
+      
+      // to calculate from DateTime
+      String timeStamp = TimeElapsed().fromDateTime(timeDate); // return 8w (cos now days: 2020-06-19)
+      
+### both methods will return the time elapsed as String
+
+## How install:
+
+      // on your dart file
+      import 'package:time_elapsed/time_elapsed.dart';
+      
+      // on pubspec.yaml
+      dependencies:
+        time_elapsed:   
+        
+
+## Example:
+[Example app](https://github.com/allansrc/calc_date/tree/master/example)
+ it run Time elapsed by clicking FAB.
+
+pay attemtion on indent pubspec
