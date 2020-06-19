@@ -8,3 +8,6 @@
 ## [0.2.2+1] - 2020-06-19.
 
 * Example task
+## [0.2.2+3] - 2020-06-19.
+
+* Add Dependencies as Cleaner

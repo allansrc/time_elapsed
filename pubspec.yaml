@@ -1,17 +1,12 @@
 name: time_elapsed
 description: A package provides a easy way to get elapsed time from DateTime data
-version: 0.2.2+1
+version: 0.2.2+3
 homepage: https://github.com/allansrc/time_elapsed
+author: Allan Ramos <allanramos.teixeira@gmail.com>
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-
-dependencies:
-  flutter:
-    sdk: flutter
+  sdk: ">=2.1.0 <3.0.0"
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
-flutter:
+  pedantic: ^1.0.0
+  test: ^1.0.0
