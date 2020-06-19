@@ -1,3 +1,6 @@
-## [0.0.1] - TODO: Add release date.
+## [0.2.1] - 2020-06-19.
+* Change Methods return.
 
-* TODO: Describe initial release.
+## [0.2.2] - 2020-06-19.
+
+* Change pubspecs section.

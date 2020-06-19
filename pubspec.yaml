@@ -1,7 +1,6 @@
 name: time_elapsed
 description: A new Flutter package project.
-version: 0.2.1
-author: Allan Ramos <allanramos.teixeira@gmail.com>
+version: 0.2.2
 homepage: https://github.com/allansrc/time_elapsed
 
 environment:
