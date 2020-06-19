@@ -36,7 +36,7 @@ You can pass it as String or DateTime type:
         
 
 ## Example:
-[Example app](https://github.com/allansrc/calc_date/tree/master/example)
+[Example app](https://github.com/allansrc/time_elapsed/tree/master/example)
  it run Time elapsed by clicking FAB.
 
 pay attemtion on indent pubspec
