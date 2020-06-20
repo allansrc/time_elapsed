@@ -1,4 +1,4 @@
-Intl
+TimeElapsed
 ====
 
 This package provides a way to facility how you getting elapsed time from a DateTime data. More applied to check how long from now an event happened.
@@ -10,6 +10,7 @@ It return elapsed time by **Weeks**, **Days**, **Hours** and **Minutes**
 ## How to use:
 
 The package has a two method to get date time elapsed: ```fromDateStr()``` and ```fromDateTime()```
+You can also use a dynamic parsin method: ```elapsedTimeDynamic()```
 
 You can pass it as String or DateTime type:
 
@@ -21,7 +22,15 @@ You can pass it as String or DateTime type:
       String timeStamp = TimeElapsed().fromDateStr(timeString); // returns 8w (cos now days:2020-06-19)
       
       // to calculate from DateTime
-      String timeStamp = TimeElapsed().fromDateTime(timeDate); // return 8w (cos now days: 2020-06-19)
+      String timeStamp = TimeElapsed().fromDateTime(timeDate); // returns 8w (cos now days: 2020-06-19)
+
+
+If you do not know what type data is, (String or DateTime):
+
+      // to calculate from both, DateTime or String
+      String timeStamp = TimeElapsed().(timeDate); // returns 8w (cos now days: 2020-06-19)
+
+      
       
 ### both methods will return the time elapsed as String
 
