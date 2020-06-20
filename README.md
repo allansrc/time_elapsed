@@ -28,7 +28,7 @@ You can pass it as String or DateTime type:
 If you do not know what type data is, (String or DateTime):
 
       // to calculate from both, DateTime or String
-      String timeStamp = TimeElapsed().(timeDate); // returns 8w (cos now days: 2020-06-19)
+      String timeStamp = TimeElapsed().elapsedTimeDynamic(timeDate); // returns 8w (cos now days: 2020-06-19)
 
       
       
