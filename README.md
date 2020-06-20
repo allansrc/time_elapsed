@@ -32,16 +32,7 @@ If you do not know what type data is, (String or DateTime):
 
       
       
-### both methods will return the time elapsed as String
-
-## How install:
-
-      // on your dart file
-      import 'package:time_elapsed/time_elapsed.dart';
-      
-      // on pubspec.yaml
-      dependencies:
-        time_elapsed:   
+### both methods will return the time elapsed as String 
         
 
 ## Example:
