@@ -11,3 +11,6 @@
 ## [0.2.2+3] - 2020-06-19.
 
 * Add Dependencies as Cleaner
+## [0.2.3] - 2020-06-19.
+
+* Add Dynamic parsing

@@ -5,6 +5,8 @@ library time_elapsed;
 /// - If provided date is older [fromDateStr] will check and return as Week, Day(s),
 ///  Hour(s), or minute(s)
 /// - If you want pass [date] as DateTime format, you should use [fromDateTime()] method
+/// - If you don't know what type is your data, or if your date is dynamic [String and  DateType],
+///  you can use [elapsedTimeDynamic()] method to pick time elapsed.
 
 class TimeElapsed {
   String fromDateStr(strTime) {
@@ -62,6 +64,16 @@ class TimeElapsed {
         final diffMin = time.difference(DateTime.now().toUtc()).inMinutes;
         return diffMin.toString().replaceAll('-', '') + 'm';
       }
+    }
+  }
+
+  /// Method to parse data even if it is String or DateTime
+  /// TimeElapsed().elapsedTimeDynamic(yourDate);
+  String elapsedTimeDynamic(date) {
+    if (date.runtimeType == DateTime) {
+      return fromDateTime(date);
+    } else {
+      return fromDateStr(date);
     }
   }
 }
