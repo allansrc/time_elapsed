@@ -14,3 +14,6 @@
 ## [0.2.3] - 2020-06-19.
 
 * Add Dynamic parsing
+## [0.2.3+1] - 2020-06-19.
+
+* Dynamic parsing
