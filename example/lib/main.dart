@@ -9,59 +9,175 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: HomePage(title: 'Time Elapsed Demo'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
+class HomePage extends StatelessWidget {
   final String title;
 
+  const HomePage({Key key, this.title}) : super(key: key);
   @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+  Widget build(BuildContext context) {
+    // date current as String
+    String _timeString = "2020-04-19 03:48:57.063773";
 
-class _MyHomePageState extends State<MyHomePage> {
-  String _timeString = "2020-04-19 03:48:57.063773"; // date current as String
+    // date current as DateTime
+    DateTime _timeDate = DateTime.parse(_timeString);
 
-  String _timeStamp = ""; // date current as String
+    // date current as String
+    String _timeStamp = DateTime.now().toString();
 
-  DateTime _timeDate =
-      DateTime.parse("2020-04-19 03:48:57.063773"); // date current as DateTime
-  void _incrementCounter() {
-    setState(() {
+    void _incrementCounter() {
       _timeString =
           TimeElapsed().fromDateStr(_timeString); // to calculate from String
       _timeStamp =
           TimeElapsed().fromDateTime(_timeDate); // to calculate from DateTime
-    });
-    print(_timeString.toString());
-    print(_timeStamp.toString());
-  }
 
-  @override
-  Widget build(BuildContext context) {
+      print(_timeString.toString());
+      print(_timeStamp.toString());
+    }
+
+    print(DateTime.now());
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Text(
-          '$_timeStamp and $_timeString',
-          style: Theme.of(context).textTheme.headline4,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      appBar: AppBar(title: Text(title)),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+            // color: Theme.of(context).primaryColor,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Card(
+                  color: Colors.amber[200],
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      "from string: " + TimeElapsed().fromDateStr(_timeString),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Colors.amber[200],
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      "from date type: " +
+                          TimeElapsed().fromDateTime(_timeDate),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Column(
+              children: [
+                Card(
+                  color: Theme.of(context).primaryColor,
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      "date now: \n" + _timeStamp,
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Theme.of(context).primaryColor,
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      "date passed: \n" + _timeString,
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Column(
+              children: [
+                Card(
+                  color: Colors.green[300],
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      // current time : 2020-06-20 21:56:50.252522
+                      "just now: " +
+                          TimeElapsed()
+                              .fromDateStr("2020-06-20 22:00:54.036065"),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Colors.green[300],
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      // current time : 2020-06-20 21:56:50.252522
+                      "minutes: " +
+                          TimeElapsed()
+                              .fromDateStr("2020-06-20 21:56:50.252522"),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Colors.green[300],
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      "hours: " +
+                          TimeElapsed()
+                              .fromDateStr("2020-06-20 20:56:50.252522"),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Colors.green[300],
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      "days: " +
+                          TimeElapsed()
+                              .fromDateStr("2020-06-18 20:56:50.252522"),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+                Card(
+                  color: Colors.green[300],
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    // base time: 2020-06-20 20:56:50.252522
+                    child: Text(
+                      "week: " +
+                          TimeElapsed()
+                              .fromDateStr("2020-06-02 20:56:50.252522"),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

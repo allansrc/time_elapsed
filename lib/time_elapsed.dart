@@ -62,7 +62,11 @@ class TimeElapsed {
       } else {
         /// if not {last checks > last writtn on memo}
         final diffMin = time.difference(DateTime.now().toUtc()).inMinutes;
-        return diffMin.toString().replaceAll('-', '') + 'm';
+        if (diffMin == 0) {
+          return 'Now';
+        } else {
+          return diffMin.toString().replaceAll('-', '') + 'm';
+        }
       }
     }
   }

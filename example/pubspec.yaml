@@ -8,7 +8,6 @@ environment:
 
 dependencies:
   time_elapsed:
-    path: ../
   flutter:
     sdk: flutter
 

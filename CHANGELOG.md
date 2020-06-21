@@ -23,3 +23,6 @@
 ## [0.2.3+3] - 2020-06-19.
 
 * Docs update
+## [0.2.3+3] - 2020-06-19.
+
+* Add 'Just Now' 'Now' return for elapsed time less than a minute
