@@ -1,5 +1,7 @@
-TimeElapsed
+
+TimeElapsed       [![pub package](https://img.shields.io/badge/pub-0.2.4%2B2-blue)](https://pub.dev/packages/time_elapsed)          ![](https://img.shields.io/pypi/l/billiard)
 ====
+
 
 This package provides a way to facility how you getting elapsed time from a DateTime data. More applied to check how long from now an event happened.
 
@@ -36,7 +38,10 @@ If you do not know what type data is, (String or DateTime):
         
 
 ## Example:
-[Example app](https://github.com/allansrc/time_elapsed/tree/master/example)
- it run Time elapsed by clicking FAB.
+[This example app shows all implementations](https://github.com/allansrc/time_elapsed/tree/master/example)
 
-pay attemtion on indent pubspec
+|App shot|
+|--------|
+|<img src="https://github.com/allansrc/time_elapsed/blob/master/example/screens/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-06-20%20at%2022.23.22.png?raw=true" width="250"> |
+
+Have a Nice Code!
