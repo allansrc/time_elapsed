@@ -35,7 +35,11 @@ class TimeElapsed {
         final diffMin = DateTime.parse(strTime)
             .difference(DateTime.now().toUtc())
             .inMinutes;
-        return diffMin.toString().replaceAll('-', '') + 'm';
+        if (diffMin <= -1) {
+          return diffMin.toString().replaceAll('-', '') + 'm';
+        } else {
+          return 'Now';
+        }
       }
     }
   }
@@ -62,10 +66,10 @@ class TimeElapsed {
       } else {
         /// if not {last checks > last writtn on memo}
         final diffMin = time.difference(DateTime.now().toUtc()).inMinutes;
-        if (diffMin == 0) {
-          return 'Now';
-        } else {
+        if (diffMin <= -1) {
           return diffMin.toString().replaceAll('-', '') + 'm';
+        } else {
+          return 'Now';
         }
       }
     }

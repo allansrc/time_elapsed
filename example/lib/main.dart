@@ -119,7 +119,7 @@ class HomePage extends StatelessWidget {
                       // current time : 2020-06-20 21:56:50.252522
                       "just now: " +
                           TimeElapsed()
-                              .fromDateStr("2020-06-20 22:00:54.036065"),
+                              .fromDateStr("2020-06-20 22:23:14.194374"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),

@@ -26,3 +26,6 @@
 ## [0.2.4] - 2020-06-20.
 
 * Add 'Just Now' 'Now' return for elapsed time less than a minute
+## [0.2.4+1] - 2020-06-20.
+
+* minor ajusts
