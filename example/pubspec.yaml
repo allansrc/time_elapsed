@@ -1,6 +1,6 @@
 name: example
 description: A new Flutter project.
-publish_to: 'none' 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   time_elapsed:
+    path: ../
   flutter:
     sdk: flutter
 
@@ -18,5 +19,4 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true

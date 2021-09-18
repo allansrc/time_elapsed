@@ -72,7 +72,7 @@ class TimeElapsed {
   }
 
   /// Method to parse data even if it is String or DateTime
-  /// TimeElapsed().elapsedTimeDynamic(yourDate);
+  /// TimeElapsed.elapsedTimeDynamic(yourDate);
   static String elapsedTimeDynamic(dynamic date) {
     if (date!.runtimeType == DateTime) {
       return fromDateTime(date);
@@ -80,4 +80,60 @@ class TimeElapsed {
       return fromDateStr(date);
     }
   }
+}
+
+extension ReturningCustomTimeElapsedString on String {
+  String toCustomTimeElapsed(CustomTimeElapsed customTime) {
+    switch (replaceAll(RegExp('[0-9\n]'), '')) {
+      case 'w':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.weeks}';
+      case 'd':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.days}';
+      case 'h':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.hours}';
+      case 'm':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.minutes}';
+      case 's':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.seconds}';
+      default:
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.now}';
+    }
+  }
+}
+
+extension ReturningElapsedString on String {
+  String toCustomWDHMS(CustomTimeElapsed customTime) {
+    switch (replaceAll(RegExp('[0-9\n]'), '')) {
+      case 'w':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.weeks}';
+      case 'd':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.days}';
+      case 'h':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.hours}';
+      case 'm':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.minutes}';
+      case 's':
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.seconds}';
+      default:
+        return '${replaceAll(RegExp('[a-zA-Z\n]'), "")} ${customTime.now}';
+    }
+  }
+}
+
+class CustomTimeElapsed {
+  String? now;
+  String? seconds;
+  String? minutes;
+  String? hours;
+  String? days;
+  String? weeks;
+
+  CustomTimeElapsed({
+    required this.now,
+    required this.seconds,
+    required this.minutes,
+    required this.hours,
+    required this.days,
+    required this.weeks,
+  });
 }

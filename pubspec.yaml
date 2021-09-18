@@ -1,6 +1,6 @@
 name: time_elapsed
 description: A package provides a easy way to get elapsed time from DateTime data
-version: 0.2.5
+version: 0.2.6
 homepage: https://github.com/allansrc/time_elapsed
 # author: Allan Ramos <allanramos.teixeira@gmail.com>
 

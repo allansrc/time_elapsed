@@ -42,6 +42,15 @@
 
 - Docs ajusts
 
-## [0.2.5] - 2020-06-20.
+## [0.2.5] - 2021-09-18.
 
 - Adds support for nullsafety
+- adds method calls as static
+  it's void the "()" before method call:
+  i.e.: old > TimeElapsed().fromString(\_time)
+  new > TimeElapsed.fromString(\_tine)
+
+## [0.2.6] - 2021-09-18.
+
+- Adds support for custom text
+  customText / Changing text on return is able now by using .toCustomTimeElapsed() or .toCustomWDHMS() methods
