@@ -9,10 +9,9 @@ library time_elapsed;
 ///  you can use [elapsedTimeDynamic()] method to pick time elapsed.
 
 class TimeElapsed {
-  String fromDateStr(strTime) {
+  static String fromDateStr(String strTime) {
     /// if time is greater than a week {first checks > writtn on memo}
-    final diffDays =
-        DateTime.parse(strTime).difference(DateTime.now().toUtc()).inDays;
+    final diffDays = DateTime.parse(strTime).difference(DateTime.now().toUtc()).inDays;
 
     if (diffDays <= -7) {
       final week = (diffDays ~/ -7).toInt();
@@ -24,17 +23,14 @@ class TimeElapsed {
       /// return days > still same increment on memo
       return diffDays.toString().replaceAll('-', '') + 'd';
     } else {
-      final diffHours =
-          DateTime.parse(strTime).difference(DateTime.now().toUtc()).inHours;
+      final diffHours = DateTime.parse(strTime).difference(DateTime.now().toUtc()).inHours;
 
       /// if not {third checks > 2° writtn on memo}
       if (diffHours <= -1) {
         return diffHours.toString().replaceAll('-', '') + 'h';
       } else {
         /// if not {last checks > last writtn on memo}
-        final diffMin = DateTime.parse(strTime)
-            .difference(DateTime.now().toUtc())
-            .inMinutes;
+        final diffMin = DateTime.parse(strTime).difference(DateTime.now().toUtc()).inMinutes;
         if (diffMin <= -1) {
           return diffMin.toString().replaceAll('-', '') + 'm';
         } else {
@@ -44,7 +40,7 @@ class TimeElapsed {
     }
   }
 
-  String fromDateTime(DateTime time) {
+  static String fromDateTime(DateTime time) {
     /// if time is greater than a week {first checks > writtn on memo}
     final diffDays = time.difference(DateTime.now().toUtc()).inDays;
 
@@ -77,8 +73,8 @@ class TimeElapsed {
 
   /// Method to parse data even if it is String or DateTime
   /// TimeElapsed().elapsedTimeDynamic(yourDate);
-  String elapsedTimeDynamic(date) {
-    if (date.runtimeType == DateTime) {
+  static String elapsedTimeDynamic(dynamic date) {
+    if (date!.runtimeType == DateTime) {
       return fromDateTime(date);
     } else {
       return fromDateStr(date);
