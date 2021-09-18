@@ -1,5 +1,5 @@
 
-TimeElapsed       [![pub package](https://img.shields.io/badge/pub-0.2.4%2B2-blue)](https://pub.dev/packages/time_elapsed)          ![](https://img.shields.io/pypi/l/billiard)
+TimeElapsed       [![pub package](https://img.shields.io/badge/pub-0.2.5-blue)](https://pub.dev/packages/time_elapsed)          ![](https://img.shields.io/pypi/l/billiard)
 ====
 
 
