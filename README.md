@@ -1,4 +1,4 @@
-# TimeElapsed [![pub package](https://img.shields.io/badge/pub-0.2.4%2B2-blue)](https://pub.dev/packages/time_elapsed) ![](https://img.shields.io/pypi/l/billiard)
+# TimeElapsed [![pub package](https://img.shields.io/badge/pub-0.2.5-blue)](https://pub.dev/packages/time_elapsed) ![](https://img.shields.io/pypi/l/billiard)
 
 This package provides a way to facility how you getting elapsed time from a DateTime data. More applied to check how long from now an event happened.
 
@@ -27,10 +27,41 @@ If you do not know what type data is, (String or DateTime):
       // to calculate from both, DateTime or String
       String timeStamp = TimeElapsed.elapsedTimeDynamic(timeDate); // returns 8w (cos now days: 2020-06-19)
 
+#### both methods will return the time elapsed as String
 
+### Using Custom Markers for Time (Days, weeks, hours etc...)
 
+To adds a custom texts or change the text near to period elapsed you can use `.toCustomTimeElapsed()` method. This method receives an object from CustomTimeElapsed class which contains all period we use.
 
-### both methods will return the time elapsed as String
+```
+// custom Time String marker
+   final customDate = CustomTimeElapsed(
+      minutes: 'minutos',
+      hours: 'horas',
+      days: 'dias',
+      now: 'agora',
+      seconds: 'segundos',
+      weeks: 'semanas',
+    );
+
+// Widget that output "76 semanas" instead of "76w"
+Text(TimeElapsed.fromDateStr(_timeString).toCustomTimeElapsed(customDate))
+```
+
+### \_
+
+In another hand, if you prefer, you can pass as params too using `.toCustomWDHMS()`.
+
+```
+toCustomWDHMS(
+      minutes: 'minutos',
+      hours: 'horas',
+      days: 'dias',
+      now: 'agora',
+      seconds: 'segundos',
+      weeks: 'semanas',
+    )
+```
 
 ## Example:
 
