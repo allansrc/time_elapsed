@@ -9,6 +9,14 @@ library time_elapsed;
 ///  you can use [elapsedTimeDynamic()] method to pick time elapsed.
 
 class TimeElapsed {
+  external String fromCustomWDHMS(
+    String weekStr,
+    String dayStr,
+    String hourStr,
+    String minuteStr,
+    String secondStr,
+    String nowStr,
+  );
   static String fromDateStr(String strTime) {
     /// if time is greater than a week {first checks > writtn on memo}
     final diffDays = DateTime.parse(strTime).difference(DateTime.now().toUtc()).inDays;

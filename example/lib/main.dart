@@ -34,10 +34,8 @@ class HomePage extends StatelessWidget {
     String _timeStamp = DateTime.now().toString();
 
     void _incrementCounter() {
-      _timeString =
-          TimeElapsed().fromDateStr(_timeString); // to calculate from String
-      _timeStamp =
-          TimeElapsed().fromDateTime(_timeDate); // to calculate from DateTime
+      _timeString = TimeElapsed.fromDateStr(_timeString); // to calculate from String
+      _timeStamp = TimeElapsed.fromDateTime(_timeDate); // to calculate from DateTime
 
       print(_timeString.toString());
       print(_timeStamp.toString());
@@ -71,8 +69,7 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      "from date type: " +
-                          TimeElapsed().fromDateTime(_timeDate),
+                      "from date type: " + TimeElapsed().fromDateTime(_timeDate),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -117,9 +114,7 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     child: Text(
                       // current time : 2020-06-20 21:56:50.252522
-                      "just now: " +
-                          TimeElapsed()
-                              .fromDateStr("2020-06-20 22:23:14.194374"),
+                      "just now: " + TimeElapsed().fromDateStr("2020-06-20 22:23:14.194374"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -130,9 +125,7 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     child: Text(
                       // current time : 2020-06-20 21:56:50.252522
-                      "minutes: " +
-                          TimeElapsed()
-                              .fromDateStr("2020-06-20 21:56:50.252522"),
+                      "minutes: " + TimeElapsed().fromDateStr("2020-06-20 21:56:50.252522"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -142,9 +135,7 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      "hours: " +
-                          TimeElapsed()
-                              .fromDateStr("2020-06-20 20:56:50.252522"),
+                      "hours: " + TimeElapsed().fromDateStr("2020-06-20 20:56:50.252522"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -154,9 +145,7 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      "days: " +
-                          TimeElapsed()
-                              .fromDateStr("2020-06-18 20:56:50.252522"),
+                      "days: " + TimeElapsed().fromDateStr("2020-06-18 20:56:50.252522"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -167,9 +156,7 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     // base time: 2020-06-20 20:56:50.252522
                     child: Text(
-                      "week: " +
-                          TimeElapsed()
-                              .fromDateStr("2020-06-02 20:56:50.252522"),
+                      "week: " + TimeElapsed().fromDateStr("2020-06-02 20:56:50.252522"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
