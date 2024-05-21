@@ -59,3 +59,7 @@
 
 - Adds support for dart 3.4.0
   changes on method [elapsedTimeDynamic] (Deprecated). Use [elapsedTime] instead
+
+## [0.3.1] - 2024-05-21.
+
+- Adds deprecation message
