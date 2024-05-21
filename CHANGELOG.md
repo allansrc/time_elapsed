@@ -58,4 +58,4 @@
 ## [0.3.0] - 2024-05-21.
 
 - Adds support for dart 3.4.0
-  changes method
+  changes on method [elapsedTimeDynamic] (Deprecated). Use [elapsedTime] instead
