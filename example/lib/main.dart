@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:time_elapsed/time_elapsed.dart';
 import 'package:flutter/material.dart';
 
@@ -13,15 +15,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(title: 'Time Elapsed Demo'),
+      home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  final String title;
-
-  const HomePage({Key key, this.title}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // date current as String
@@ -43,18 +43,30 @@ class HomePage extends StatelessWidget {
       weeks: 'semanas',
     );
 
-    void _incrementCounter() {
-      _timeString = TimeElapsed.fromDateStr(_timeString); // to calculate from String
-      _timeStamp = TimeElapsed.fromDateTime(_timeDate); // to calculate from DateTime
+    // to calculate from String
+    _timeString = TimeElapsed.fromDateStr(_timeString);
+    // to calculate from DateTime
+    _timeStamp = TimeElapsed.fromDateTime(_timeDate);
 
-      print(_timeString.toString());
-      print(_timeStamp.toString());
-    }
+    log(_timeString.toString());
+    log(_timeStamp.toString());
 
-    print(DateTime.now());
+    log(DateTime.now().toString());
+
+    final localizedString = CustomTimeElapsed(
+      now: 'agora',
+      seconds: 'segundos',
+      minutes: 'minutos',
+      hours: 'horas',
+      days: 'dias',
+      weeks: 'semanas',
+    );
+
+    log(_timeString.toCustomTimeElapsed(localizedString));
+    log(_timeStamp.toCustomTimeElapsed(localizedString));
 
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(title: Text('Time Elapsed Demo')),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -69,7 +81,9 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      "from string: " + TimeElapsed.fromDateStr(_timeString).toCustomTimeElapsed(customDate),
+                      "from string: " +
+                          TimeElapsed.fromDateStr(_timeString)
+                              .toCustomTimeElapsed(customDate),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -124,7 +138,8 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     child: Text(
                       // current time : 2020-06-20 21:56:50.252522
-                      "just now: " + TimeElapsed.fromDateStr("2020-06-20 22:23:14.194374"),
+                      "just now: " +
+                          TimeElapsed.fromDateStr("2020-06-20 22:23:14.194374"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -135,7 +150,8 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     child: Text(
                       // current time : 2020-06-20 21:56:50.252522
-                      "minutes: " + TimeElapsed.fromDateStr("2020-06-20 21:56:50.252522"),
+                      "minutes: " +
+                          TimeElapsed.fromDateStr("2020-06-20 21:56:50.252522"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -145,7 +161,8 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      "hours: " + TimeElapsed.fromDateStr("2020-06-20 20:56:50.252522"),
+                      "hours: " +
+                          TimeElapsed.fromDateStr("2020-06-20 20:56:50.252522"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -155,7 +172,8 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      "days: " + TimeElapsed.fromDateStr("2020-06-18 20:56:50.252522"),
+                      "days: " +
+                          TimeElapsed.fromDateStr("2020-06-18 20:56:50.252522"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -166,7 +184,8 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     // base time: 2020-06-20 20:56:50.252522
                     child: Text(
-                      "week: " + TimeElapsed.fromDateStr("2020-06-02 20:56:50.252522"),
+                      "week: " +
+                          TimeElapsed.fromDateStr("2020-06-02 20:56:50.252522"),
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
