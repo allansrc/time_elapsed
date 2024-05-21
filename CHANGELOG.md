@@ -54,3 +54,8 @@
 
 - Adds support for custom text
   customText / Changing text on return is able now by using .toCustomTimeElapsed() or .toCustomWDHMS() methods
+
+## [0.3.0] - 2024-05-21.
+
+- Adds support for dart 3.4.0
+  changes on method [elapsedTimeDynamic] (Deprecated). Use [elapsedTime] instead

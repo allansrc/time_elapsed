@@ -84,6 +84,17 @@ class TimeElapsed {
       return fromDateStr(date);
     }
   }
+
+  @deprecated
+
+  /// User should use [elapsedTime] instead of [elapsedTimeDynamic]
+  static String elapsedTimeDynamic(dynamic date) {
+    if (date!.runtimeType == DateTime) {
+      return fromDateTime(date);
+    } else {
+      return fromDateStr(date);
+    }
+  }
 }
 
 extension ReturningCustomTimeElapsedString on String {
