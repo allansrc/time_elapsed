@@ -85,9 +85,11 @@ class TimeElapsed {
     }
   }
 
-  @deprecated
-
-  /// User should use [elapsedTime] instead of [elapsedTimeDynamic]
+  @Deprecated(
+    '''
+    Use [elapsedTime] instead of [elapsedTimeDynamic]
+    ''',
+  )
   static String elapsedTimeDynamic(dynamic date) {
     if (date!.runtimeType == DateTime) {
       return fromDateTime(date);
