@@ -1,4 +1,4 @@
-# TimeElapsed [![pub package](https://img.shields.io/badge/pub-0.2.6-blue)](https://pub.dev/packages/time_elapsed) ![](https://img.shields.io/pypi/l/billiard)
+# TimeElapsed [![pub package](https://img.shields.io/badge/pub-0.3.0-blue)](https://pub.dev/packages/time_elapsed) ![](https://img.shields.io/pypi/l/billiard)
 
 This package provides a way to facility how you getting elapsed time from a DateTime data. More applied to check how long from now an event happened.
 
